@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #ffffff; /* 白色背景 */
-            color: transparent; /* 初始设置文字透明 */
+            color: #000000; /* 黑色文字 */
             margin: 0;
             padding: 0;
         }
@@ -18,29 +18,40 @@
             text-align: center;
             padding-top: 100px;
         }
-        h1 {
-            font-size: 48px;
-            font-weight: bold;
-            /* 添加花式字体 */
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            /* 添加动画效果 */
-            animation: fadeIn 4s forwards;
-            /* 添加光影效果 */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
         }
-        @keyframes fadeIn {
-            from {
-                color: transparent; /* 初始文字透明 */
-            }
-            to {
-                color: #000000; /* 最终文字颜色 */
-            }
+        .button-container .button {
+            width: 92px;
+            height: 42px;
+            margin: 5px;
+            background-color: #007bff; /* 按钮背景颜色 */
+            color: #ffffff; /* 按钮文字颜色 */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Hello</h1>
+        <div class="button-container">
+            <button class="button">测试</button>
+            <button class="button">测试</button>
+            <button class="button">测试</button>
+            <button class="button">测试</button>
+            <button class="button">测试</button>
+            <button class="button">测试</button>
+            <button class="button">测试</button>
+            <button class="button">测试</button>
+            <button class="button">测试</button>
+        </div>
     </div>
 </body>
 </html>
