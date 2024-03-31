@@ -18,7 +18,7 @@
             text-align: center;
             padding-top: 70px;
         }
-        h1 {
+        h1, .alert {
             font-size: 48px;
             font-weight: bold;
             /* 添加花式字体 */
@@ -49,10 +49,7 @@
         }
         .profile h2
         {
-            font-size: 48px;
-            font-weight: bold;
-            /* 添加花式字体 */
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 12px;
             /* 添加光影效果 */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             /* 添加动画效果 */
@@ -91,7 +88,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>Hello</h1>
+        <!-- JavaScript 弹窗 -->
+        <script>
+            window.onload = function() {
+                var div = document.createElement('div');
+                div.className = 'alert';
+                div.textContent = 'Hello';
+                document.body.appendChild(div);
+            };
+        </script>
+        
         <!-- 个人资料 -->
         <div class="profile">
             <img src="http://q.qlogo.cn/headimg_dl?dst_uin=3165149529&spec=640&img_type=jpg" alt="LR">
