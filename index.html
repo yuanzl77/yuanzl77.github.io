@@ -24,16 +24,16 @@
             /* 添加花式字体 */
             font-family: 'Comic Sans MS', cursive, sans-serif;
             /* 添加动画效果 */
-            animation: fadeIn 2s ease-in-out;
+            animation: shadowEffect 3s infinite alternate;
+            /* 添加光影效果 */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
+        @keyframes shadowEffect {
+            from {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
+            to {
+                text-shadow: -2px -2px 4px rgba(255,255,255,0.5);
             }
         }
     </style>
