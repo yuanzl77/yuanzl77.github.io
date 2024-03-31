@@ -17,16 +17,31 @@
             margin: auto;
             text-align: center;
             padding-top: 100px;
-            display: flex;
-            justify-content: space-between; /* 调整个人资料和音乐之间的间距 */
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            /* 添加花式字体 */
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            /* 添加光影效果 */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            /* 添加动画效果 */
+            animation: fadeIn 4s forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                color: transparent; /* 初始文字透明 */
+            }
+            to {
+                color: #000000; /* 最终文字颜色 */
+            }
         }
         .profile {
             margin-top: 50px;
-            text-align: right; /* 调整个人资料的文本对齐方式 */
         }
         .profile img {
-            width: 350px; /* 调整头像大小 */
-            height: 350px; /* 调整头像大小 */
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             margin-bottom: 10px;
         }
@@ -55,14 +70,15 @@
         }
         .music {
             margin-top: 30px;
-            text-align: left; /* 调整音乐的文本对齐方式 */
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <h1>Hello</h1>
+        <!-- 个人资料 -->
         <div class="profile">
-            <img src="http://q.qlogo.cn/headimg_dl?dst_uin=3165149529&spec=640&img_type=jpg" alt="LR"> <!-- 调整头像大小 -->
+            <img src="http://q.qlogo.cn/headimg_dl?dst_uin=3165149529&spec=640&img_type=jpg" alt="LR">
             <p>Name: John Doe</p>
             <p>Mood: Happy</p>
             <p>Hobbies: Reading, Cooking</p>
