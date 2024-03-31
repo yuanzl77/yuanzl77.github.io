@@ -3,116 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LR</title>
+    <title>个人资料</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffffff; /* 白色背景 */
-            color: transparent; /* 初始设置文字透明 */
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
         .container {
-            width: 100%;
-            height: 100vh; /* 占满整个视窗高度 */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .alert {
-            font-size: 48px;
-            font-weight: bold;
-            /* 添加花式字体 */
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            /* 添加光影效果 */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            /* 添加动画效果 */
-            animation: fadeIn 4s forwards;
+        h1 {
+            color: #333;
         }
-        @keyframes fadeIn {
-            from {
-                color: transparent; /* 初始文字透明 */
-            }
-            to {
-                color: #000000; /* 最终文字颜色 */
-            }
-        }
-        .profile {
-            margin-top: 50px;
-            overflow: hidden; /* 清除浮动 */
-        }
-        .profile img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-right: 20px; /* 调整图像与文字之间的距离 */
-            float: left; /* 图像左浮动 */
-        }
-        .profile h2
-        {
-            font-size: 12px;
-            /* 添加光影效果 */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            /* 添加动画效果 */
-            animation: fadeIn 4s forwards;
-        }
-        .profile p {
-        margin: 0;
-        }
-        .profile p {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-        .message {
-            margin-top: 30px;
-            text-align: left;
-        }
-        .message textarea {
-            width: 100%;
-            height: 100px;
-            margin-bottom: 10px;
-            padding: 10px;
-            resize: none;
-        }
-        .message button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .music {
-            margin-top: 12px;
+        p {
+            color: #666;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 弹窗 -->
-        <div class="alert">
-            Hello
-        </div>
-        
-        <!-- 个人资料 -->
-        <div class="profile">
-            <img src="http://q.qlogo.cn/headimg_dl?dst_uin=3165149529&spec=640&img_type=jpg" alt="LR">
-            <h2>Name: LR</h2>
-            <p>Mood: Happy</p>
-            <p>Hobbies: Reading, Cooking</p>
-        </div>
-        <!-- 留言 -->
-        <div class="message">
-            <h3>Leave a message:</h3>
-            <textarea placeholder="Type your message here..."></textarea>
-            <button>Submit</button>
-        </div>
-        <!-- 音乐 -->
-        <div class="music">
-            <h4>音乐播放:</h4>
-            <iframe src="https://music.163.com/m/outchain/player?type=0&id=3119636209&auto=1&height=430" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
-        </div>
+        <h1>你的名字</h1>
+        <p>你的介绍或简要描述。</p>
+        <h2>联系方式</h2>
+        <ul>
+            <li>Email: youremail@example.com</li>
+            <li>电话: +1234567890</li>
+        </ul>
+        <h2>社交媒体</h2>
+        <ul>
+            <li><a href="https://github.com/yourusername">GitHub</a></li>
+            <li><a href="https://twitter.com/yourusername">Twitter</a></li>
+            <!-- 添加其他社交媒体链接 -->
+        </ul>
     </div>
 </body>
 </html>
