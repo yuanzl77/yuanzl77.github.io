@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #ffffff; /* 白色背景 */
-            color: #000000; /* 黑色文字 */
+            color: transparent; /* 初始设置文字透明 */
             margin: 0;
             padding: 0;
         }
@@ -24,16 +24,16 @@
             /* 添加花式字体 */
             font-family: 'Comic Sans MS', cursive, sans-serif;
             /* 添加动画效果 */
-            animation: shadowEffect 3s infinite alternate;
+            animation: fadeIn 4s forwards;
             /* 添加光影效果 */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        @keyframes shadowEffect {
+        @keyframes fadeIn {
             from {
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                color: transparent; /* 初始文字透明 */
             }
             to {
-                text-shadow: -2px -2px 4px rgba(255,255,255,0.5);
+                color: #000000; /* 最终文字颜色 */
             }
         }
     </style>
