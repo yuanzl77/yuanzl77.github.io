@@ -11,8 +11,6 @@
             color: transparent; /* 初始设置文字透明 */
             margin: 0;
             padding: 0;
-            /* 添加全局动画 */
-            animation: fadeIn 4s forwards;
         }
         .container {
             width: 80%;
@@ -25,46 +23,17 @@
             font-weight: bold;
             /* 添加花式字体 */
             font-family: 'Comic Sans MS', cursive, sans-serif;
+            /* 添加动画效果 */
+            animation: fadeIn 4s forwards;
             /* 添加光影效果 */
-            text-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         @keyframes fadeIn {
             from {
-                opacity: 0; /* 初始透明度为 0 */
+                color: transparent; /* 初始文字透明 */
             }
             to {
-                opacity: 1; /* 最终透明度为 1 */
-            }
-        }
-        .button-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .button {
-            width: 92px;
-            height: 42px;
-            margin: 10px;
-            background-color: #007bff; /* 按钮背景颜色 */
-            color: #ffffff; /* 按钮文字颜色 */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            opacity: 0; /* 初始透明度为 0 */
-            animation: fadeInButton 2s forwards; /* 添加按钮的淡入动画 */
-        }
-        .button:hover {
-            background-color: #0056b3; /* 按钮鼠标悬停时的背景颜色 */
-        }
-        @keyframes fadeInButton {
-            from {
-                opacity: 0; /* 初始透明度为 0 */
-            }
-            to {
-                opacity: 1; /* 最终透明度为 1 */
+                color: #000000; /* 最终文字颜色 */
             }
         }
     </style>
@@ -72,12 +41,6 @@
 <body>
     <div class="container">
         <h1>Hello</h1>
-        <div class="button-container">
-            <!-- 添加按钮 -->
-            <button class="button">测试</button>
-            <button class="button">测试</button>
-            <button class="button">测试</button>
-        </div>
     </div>
 </body>
 </html>
