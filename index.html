@@ -30,11 +30,17 @@
         }
         @keyframes fadeIn {
             from {
-                color: transparent; /* 初始文字透明 */
+                opacity: 0; /* 初始透明度为 0 */
             }
             to {
-                color: #000000; /* 最终文字颜色 */
+                opacity: 1; /* 最终透明度为 1 */
             }
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
         }
         .button {
             width: 92px;
@@ -47,20 +53,31 @@
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
-            transition: background-color 0.3s ease;
+            opacity: 0; /* 初始透明度为 0 */
+            animation: fadeInButton 2s forwards; /* 添加按钮的淡入动画 */
         }
         .button:hover {
             background-color: #0056b3; /* 按钮鼠标悬停时的背景颜色 */
+        }
+        @keyframes fadeInButton {
+            from {
+                opacity: 0; /* 初始透明度为 0 */
+            }
+            to {
+                opacity: 1; /* 最终透明度为 1 */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Hello</h1>
-        <!-- 添加按钮 -->
-        <button class="button">测试</button>
-        <button class="button">测试</button>
-        <button class="button">测试</button>
+        <div class="button-container">
+            <!-- 添加按钮 -->
+            <button class="button">测试</button>
+            <button class="button">测试</button>
+            <button class="button">测试</button>
+        </div>
     </div>
 </body>
 </html>
