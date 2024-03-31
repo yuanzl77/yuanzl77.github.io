@@ -23,16 +23,25 @@
             font-weight: bold;
             /* 添加花式字体 */
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            /* 添加光影效果 */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             /* 添加动画效果 */
             animation: fadeIn 4s forwards;
+            /* 添加光影效果 */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        @keyframes fadeIn {
+            from {
+                color: transparent; /* 初始文字透明 */
+            }
+            to {
+                color: #000000; /* 最终文字颜色 */
+            }
         }
         .copyright {
-            font-size: 48px;
-            font-weight: bold;
-            /* 使用与 h1 相同的花式字体 */
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
         }
     </style>
 </head>
@@ -40,6 +49,6 @@
     <div class="container">
         <h1>Hello</h1>
     </div>
-    <h1 class="copyright">© 2024 Powered by LR</h1>
+    <div class="copyright">© 2024 Powered by LR</div>
 </body>
 </html>
