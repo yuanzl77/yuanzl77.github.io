@@ -1,16 +1,4 @@
-<?php
-function getDelay($url) {
-    $start_time = microtime(true);
-    $response = file_get_contents($url);
-    if ($response === false) {
-        return "无法获取";
-    }
-    $end_time = microtime(true);
-    $delay = ($end_time - $start_time) * 1000; // 转换为毫秒
-    return $delay . " 毫秒";
-}
-?>
-<?php echo '<!DOCTYPE html>' ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +7,7 @@ function getDelay($url) {
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffffff;
+            background-color: #ffffff; /* 白色背景 */
             margin: 0;
             padding: 0;
         }
@@ -32,30 +20,34 @@ function getDelay($url) {
         h1 {
             font-size: 48px;
             font-weight: bold;
+            /* 添加花式字体 */
             font-family: 'Comic Sans MS', cursive, sans-serif;
+            /* 添加动画效果 */
             animation: fadeIn 4s forwards;
+            /* 添加光影效果 */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         @keyframes fadeIn {
             from {
-                color: transparent;
+                color: transparent; /* 初始文字透明 */
             }
             to {
-                color: #000000;
+                color: #000000; /* 最终文字颜色 */
             }
         }
-        .delay {
-            font-size: 16px;
-        }
-        .error {
-            color: red;
+        .copyright {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            font-size: 14px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Hello</h1>
-        <p class="delay">延迟：<?php echo getDelay('http://154.44.25.212:6689/tv.txt'); ?></p>
     </div>
+    <div class="copyright">© 2024 Powered by LR</div>
 </body>
 </html>
