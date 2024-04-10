@@ -1,15 +1,3 @@
-<?php
-function getDelay($url) {
-    $start_time = microtime(true);
-    $response = file_get_contents($url);
-    if ($response === false) {
-        return "无法获取";
-    }
-    $end_time = microtime(true);
-    $delay = ($end_time - $start_time) * 1000; // 转换为毫秒
-    return $delay . " 毫秒";
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,22 +50,8 @@ function getDelay($url) {
                 <a href="http://www.sc1080.top" target="_blank">http://www.sc1080.top</a>&nbsp;<span speed="http://www.sc1080.top/">测速中</span><br>
                 <a href="http://ky1080.top" target="_blank">http://ky1080.top</a>&nbsp;<span speed="http://ky1080.top/">测速中</span><br>
                 <a href="http://www.ky1080.top" target="_blank">http://www.ky1080.top</a>&nbsp;<span speed="http://www.ky1080.top/">测速中</span><br>
-                <b>如果您认可酷云影视 - 专注1080p 4k蓝光超清影视免费在线，请分享给你的好友！</b>
-            </p>
-            <p>
-                <a href="/index.php/label/app.html" class="btn-main btn-large shadow-drop article-btn">酷云影视 - 专注1080p 4k蓝光超清影视免费在线APP下载</a><br>
-                如果域名被封无法访问，可通过App打开、查看最新网址..<br>
-            </p>
-            <hr>
-            <ul>
-                <li><a href="/index.php/label/about.html" target="_blank">关于我们</a></li>
-                <li><a href="/index.php/label/help.html" target="_blank">投屏帮助</a></li>
-                <li><a href="/index.php/label/banquan.html" target="_blank">版权声明</a></li>
-            </ul>
-            <hr>
+                </p>
         </div>
-        <div class="article-bg"></div>
-        <div class="article-bg01"></div>
     </div>
 </body>
 </html>
