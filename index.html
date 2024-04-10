@@ -56,30 +56,29 @@
 
     <script>
         var urls = [
-            "http://sc1080.top/",
-            "http://www.sc1080.top/",
-            "http://ky1080.top/",
-            "http://www.ky1080.top/"
+            "https://sc1080.top",
+            "http://www.sc1080.top",
+            "http://ky1080.top",
+            "http://www.ky1080.top"
         ];
 
         urls.forEach(function(url) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", url, true);
-            xhr.onload = function() {
-                var responseTime = Date.now() - startTime;
-                var speed = "较慢";
-                if (responseTime < 300) {
-                    speed = "极快";
-                } else if (responseTime >= 300 && responseTime < 500) {
-                    speed = "较快";
-                }
-                document.getElementById(url.replace(/[^\w]/g, "_")).textContent = speed + " (" + responseTime + "ms)";
-            };
-            xhr.onerror = function() {
-                document.getElementById(url.replace(/[^\w]/g, "_")).textContent = "无法获取";
-            };
-            var startTime = Date.now();
-            xhr.send();
+            var startTime = performance.now();
+            fetch(url, { method: "HEAD" })
+                .then(function(response) {
+                    var endTime = performance.now();
+                    var speed = "较慢";
+                    var responseTime = endTime - startTime;
+                    if (responseTime < 300) {
+                        speed = "极快";
+                    } else if (responseTime >= 300 && responseTime < 500) {
+                        speed = "较快";
+                    }
+                    document.getElementById(url.replace(/[^\w]/g, "_")).textContent = speed + " (" + responseTime.toFixed(2) + "ms)";
+                })
+                。catch(function(error) {
+                    document.getElementById(url.replace(/[^\w]/g, "_")).textContent = "无法获取";
+                });
         });
     </script>
 </body>
