@@ -10,7 +10,7 @@ function getDelay($url) {
     return $delay . " 毫秒";
 }
 ?>
-<!DOCTYPE html>
+<?php echo '<!DOCTYPE html>' ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
