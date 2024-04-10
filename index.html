@@ -1,3 +1,15 @@
+<?php
+function getDelay($url) {
+    $start_time = microtime(true);
+    $response = file_get_contents($url);
+    if ($response === false) {
+        return "无法获取";
+    }
+    $end_time = microtime(true);
+    $delay = ($end_time - $start_time) * 1000; // 转换为毫秒
+    return $delay . " 毫秒";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +19,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffffff; /* 白色背景 */
+            background-color: #ffffff;
             margin: 0;
             padding: 0;
         }
@@ -20,34 +32,82 @@
         h1 {
             font-size: 48px;
             font-weight: bold;
-            /* 添加花式字体 */
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            /* 添加动画效果 */
             animation: fadeIn 4s forwards;
-            /* 添加光影效果 */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         @keyframes fadeIn {
             from {
-                color: transparent; /* 初始文字透明 */
+                color: transparent;
             }
             to {
-                color: #000000; /* 最终文字颜色 */
+                color: #000000;
             }
         }
-        .copyright {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            font-size: 14px;
-            text-align: center;
+        .delay {
+            font-size: 16px;
+        }
+        .error {
+            color: red;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Hello</h1>
+        <div class="article-content">
+            <h2 id="domain"><a href="#domain">域名列表</a></h2>
+            <p>
+                <a href="https://sc1080.top" target="_blank">http://sc1080.top</a>&nbsp;<span speed="http://sc1080.top/">测速中</span><br>
+                <a href="http://www.sc1080.top" target="_blank">http://www.sc1080.top</a>&nbsp;<span speed="http://www.sc1080.top/">测速中</span><br>
+                <a href="http://ky1080.top" target="_blank">http://ky1080.top</a>&nbsp;<span speed="http://ky1080.top/">测速中</span><br>
+                <a href="http://www.ky1080.top" target="_blank">http://www.ky1080.top</a>&nbsp;<span speed="http://www.ky1080.top/">测速中</span><br>
+                <b>如果您认可酷云影视 - 专注1080p 4k蓝光超清影视免费在线，请分享给你的好友！</b>
+            </p>
+            <p>
+                <a href="/index.php/label/app.html" class="btn-main btn-large shadow-drop article-btn">酷云影视 - 专注1080p 4k蓝光超清影视免费在线APP下载</a><br>
+                如果域名被封无法访问，可通过App打开、查看最新网址..<br>
+            </p>
+            <hr>
+            <ul>
+                <li><a href="/index.php/label/about.html" target="_blank">关于我们</a></li>
+                <li><a href="/index.php/label/help.html" target="_blank">投屏帮助</a></li>
+                <li><a href="/index.php/label/banquan.html" target="_blank">版权声明</a></li>
+            </ul>
+            <hr>
+        </div>
+        <div class="article-bg"></div>
+        <div class="article-bg01"></div>
     </div>
-    <div class="copyright">© 2024 Powered by LR</div>
 </body>
 </html>
+<script>
+    var ping = 1;
+    setInterval("ping++", 1);
+    function test(i) {
+        $("span[speed]").each(function(x) {
+            if(i === x) {
+                var str ="较慢";
+                if(ping < 300) {
+                    $(this).css("color","green");
+                    str ="极快";
+                }
+                if(ping > 300 && ping < 500) {
+                    $(this).css("color","#00FF00");
+                    str ="较快";
+                }
+                if(ping > 500) {
+                    $(this).css("color","#666666");
+                }
+                $(this).text("" + str +"" +"(" + ping * 1 +"ms)");
+            }
+        });
+    }
+    $(function() {
+        $("span[speed]").each(function(i) {
+            var sortid = $(this).attr("speed");
+            var self = $(this);
+            self.append('<img src="' + sortid + '?' + Math.random() + '" width="1" height="1" style="display:none" onerror=test(' + i + ') >');
+        });
+    });
+</script>
