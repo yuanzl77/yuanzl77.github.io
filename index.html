@@ -1,3 +1,15 @@
+<?php
+function getDelay($url) {
+    $start_time = microtime(true);
+    $response = file_get_contents($url);
+    if ($response === false) {
+        return "无法获取";
+    }
+    $end_time = microtime(true);
+    $delay = ($end_time - $start_time) * 1000; // 转换为毫秒
+    return $delay . " 毫秒";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,27 +55,7 @@
 <body>
     <div class="container">
         <h1>Hello</h1>
-        <p class="delay">延迟：正在获取...</p>
+        <p class="delay">延迟：<?php echo getDelay('http://154.44.25.212:6689/tv.txt'); ?></p>
     </div>
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const url = 'http://154.44.25.212:6689/tv.txt';
-            const startTime = performance.now();
-
-            fetch(url)
-                .then(response => {
-                    const endTime = performance.now();
-                    const delay = endTime - startTime;
-                    document.querySelector('.delay').textContent = `延迟：${delay} 毫秒`;
-                    if (!response.ok) {
-                        throw new Error('网络请求失败');
-                    }
-                })
-                。catch(error => {
-                    document.querySelector('.delay').textContent = `延迟：无法获取 (${error.message})`;
-                    document.querySelector('.delay').classList.add('error');
-                });
-        });
-    </script>
 </body>
 </html>
