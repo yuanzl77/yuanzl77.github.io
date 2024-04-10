@@ -32,29 +32,38 @@
                 color: #000000;
             }
         }
-        .copyright {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            font-size: 14px;
-            text-align: center;
+        .delay {
+            font-size: 16px;
+        }
+        .error {
+            color: red;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Hello</h1>
-        <table>
-            <tr>
-                <th>网址</th>
-                <th>网址延迟</th>
-            </tr>
-            <tr>
-                <td><a href="http://154.44.25.212:6689/tv.txt">http://154.44.25.212:6689/tv.txt</a></td>
-                <td>待添加</td>
-            </tr>
-        </table>
+        <p class="delay">延迟：正在获取...</p>
     </div>
-    <div class="copyright">© 2024 Powered by LR</div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const url = 'http://154.44.25.212:6689/tv.txt';
+            const startTime = performance.now();
+
+            fetch(url)
+                .then(response => {
+                    const endTime = performance.now();
+                    const delay = endTime - startTime;
+                    document.querySelector('.delay').textContent = `延迟：${delay} 毫秒`;
+                    if (!response.ok) {
+                        throw new Error('网络请求失败');
+                    }
+                })
+                。catch(error => {
+                    document.querySelector('.delay').textContent = `延迟：无法获取 (${error.message})`;
+                    document.querySelector('.delay').classList.add('error');
+                });
+        });
+    </script>
 </body>
 </html>
