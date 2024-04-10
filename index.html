@@ -46,17 +46,25 @@
             width: 200px;
             margin-top: 20px;
         }
+
+        /* 媒体查询：在小屏幕上将公益计划部分宽度设置为90% */
+        @media screen and (max-width: 768px) {
+            .public-welfare {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Hello</h1>
     </div>
-    <div class="public-welfare">
+    <!-- 居中显示的公益计划部分 -->
+    <div class="container public-welfare">
         <h2>公益计划</h2>
         <p>
-            这是一项公益计划，为大家免费提供TVBox接口！由于各大在线仓库封锁，萌生了购买云服务器的想法！看到
-            (<a href="https://www.rainyun.com/Mjk1NjQ5_" target="_blank">雨云</a>) 
+            这是一项公益计划，为大家免费提供TVBox接口！由于各大在线仓库封锁，萌生了购买云服务器的想法！看到雨云
+            <a href="https://www.rainyun.com/Mjk1NjQ5_" target="_blank">https://www.rainyun.com/Mjk1NjQ5_</a> 
             香港三区活动，购买了1G1H的低配云服务器（二级域名也没有，经费有限），不过速度和延迟很理想！应该足够挂TVBox在线接口！
         </p>
         <p>
