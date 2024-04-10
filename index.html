@@ -43,43 +43,6 @@
 <body>
     <div class="container">
         <h1>Hello</h1>
-        <div class="article-content">
-            <h2 id="domain"><a href="#domain">域名列表</a></h2>
-            <p>
-                <a href="https://sc1080.top" target="_blank">http://sc1080.top</a>&nbsp;<span id="sc1080" class="speed">测速中</span><br>
-                <a href="http://www.sc1080.top" target="_blank">http://www.sc1080.top</a>&nbsp;<span id="www_sc1080" class="speed">测速中</span><br>
-                <a href="http://ky1080.top" target="_blank">http://ky1080.top</a>&nbsp;<span id="ky1080" class="speed">测速中</span><br>
-                <a href="http://www.ky1080.top" target="_blank">http://www.ky1080.top</a>&nbsp;<span id="www_ky1080" class="speed">测速中</span><br>
-            </p>
-        </div>
     </div>
-
-    <script>
-        var urls = [
-            "https://sc1080.top",
-            "http://www.sc1080.top",
-            "http://ky1080.top",
-            "http://www.ky1080.top"
-        ];
-
-        urls.forEach(function(url) {
-            var startTime = performance.now();
-            fetch(url, { method: "HEAD" })
-                .then(function(response) {
-                    var endTime = performance.now();
-                    var speed = "较慢";
-                    var responseTime = endTime - startTime;
-                    if (responseTime < 300) {
-                        speed = "极快";
-                    } else if (responseTime >= 300 && responseTime < 500) {
-                        speed = "较快";
-                    }
-                    document.getElementById(url.replace(/[^\w]/g, "_")).textContent = speed + " (" + responseTime.toFixed(2) + "ms)";
-                })
-                。catch(function(error) {
-                    document.getElementById(url.replace(/[^\w]/g, "_")).textContent = "无法获取";
-                });
-        });
-    </script>
 </body>
 </html>
