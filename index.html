@@ -58,14 +58,13 @@
         code a {
             color: #000000;
             text-decoration: none;
+            display: inline-block;
         }
         code a::after {
             content: attr(href);
             display: inline-block;
-            margin-left: 10px;
             padding: 5px 10px;
             border-radius: 12px; /* 圆角半径 */
-            background-color: #2ECC71; /* 莹绿色 */
             color: #ffffff;
         }
         .not-recommended code a::after {
@@ -98,9 +97,9 @@
         <div class="additional-content">
             <h2>在线接口</h2>
             <code>
-2G2H: <a class="recommended" href="http://175.178.251.183:6689/tv.txt" target="_blank"></a><br>
-GitLab: <a class="not-recommended" href="https://gitlab.com/lr77/TVBox-url/-/raw/main/tv.txt" target="_blank"></a><br>
-Github: <a class="not-recommended" href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/yuanzl77/TVBox-url/main/tv.txt" target="_blank"></a><br>
+2G2H: <span class="recommended"><a href="http://175.178.251.183:6689/tv.txt" target="_blank"></a></span><br>
+GitLab: <span class="not-recommended"><a href="https://gitlab.com/lr77/TVBox-url/-/raw/main/tv.txt" target="_blank"></a></span><br>
+Github: <span class="not-recommended"><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/yuanzl77/TVBox-url/main/tv.txt" target="_blank"></a></span><br>
             </code>
         </div>
     </div>
