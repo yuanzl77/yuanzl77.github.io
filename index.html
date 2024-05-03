@@ -42,7 +42,6 @@
             text-align: left;
             margin-top: 50px;
             padding: 20px;
-            background-color: #f5f5f5;
             border-radius: 10px;
         }
         .additional-content img {
@@ -56,6 +55,18 @@
             font-size: 14px;
             margin-top: 2px;
         }
+        .recommended {
+            background-color: #2ECC71; /* 绿色 */
+        }
+        .not-recommended {
+            background-color: #E74C3C; /* 红色 */
+        }
+        .recommended code a {
+            color: #ffffff; /* 推荐链接文字颜色 */
+        }
+        .not-recommended code a {
+            color: #000000; /* 不推荐链接文字颜色 */
+        }
         .copyright {
             text-align: center;
             margin-top: 20px;
@@ -65,7 +76,7 @@
 <body>
     <div class="container">
         <h1>Hello</h1>
-        <div class="additional-content">
+        <div class="additional-content recommended">
             <h2>公益计划</h2>
             <p>
                 这是一项公益计划，为大家免费提供 TVBox 接口！由于各大在线仓库封锁，购买了云服务器！<br>
@@ -77,10 +88,15 @@
             <img src="http://175.178.251.183:6689/打赏码.jpg" alt="打赏码">
             <p class="caption">打赏列表我会定期公开，希望大家多多打赏！ 最好每月 2~5 元！谢谢大家！</p>
         </div>
-        <div class="additional-content">
+        <div class="additional-content recommended">
             <h2>在线接口</h2>
             <code>
 2G2H: <a href="http://175.178.251.183:6689/tv.txt" target="_blank">接口</a><br>
+            </code>
+        </div>
+        <div class="additional-content not-recommended">
+            <h2>在线接口</h2>
+            <code>
 GitLab: <a href="https://gitlab.com/lr77/TVBox-url/-/raw/main/tv.txt" target="_blank">接口</a><br>
 Github: <a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/yuanzl77/TVBox-url/main/tv.txt" target="_blank">接口</a><br>
             </code>
