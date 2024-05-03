@@ -73,6 +73,10 @@
         .recommended code a::after {
             background-color: #2ECC71; /* 莹绿色 */
         }
+        .link-wrapper {
+            display: inline-block;
+            width: auto;
+        }
         .copyright {
             text-align: center;
             margin-top: 20px;
@@ -97,9 +101,9 @@
         <div class="additional-content">
             <h2>在线接口</h2>
             <code>
-2G2H: <a class="recommended" href="http://175.178.251.183:6689/tv.txt" target="_blank"></a><br>
-GitLab: <a class="not-recommended" href="https://gitlab.com/lr77/TVBox-url/-/raw/main/tv.txt" target="_blank"></a><br>
-Github: <a class="not-recommended" href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/yuanzl77/TVBox-url/main/tv.txt" target="_blank"></a><br>
+                2G2H: <span class="recommended"><div class="link-wrapper"><a href="http://175.178.251.183:6689/tv.txt" target="_blank"></a></div></span><br>
+                GitLab: <span class="not-recommended"><div class="link-wrapper"><a href="https://gitlab.com/lr77/TVBox-url/-/raw/main/tv.txt" target="_blank"></a></div></span><br>
+                Github: <span class="not-recommended"><div class="link-wrapper"><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/yuanzl77/TVBox-url/main/tv.txt" target="_blank"></a></div></span><br>
             </code>
         </div>
     </div>
