@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,9 +32,21 @@
                 color: #000000;
             }
         }
-        .additional-content, .additional-personal {
+        .delay {
+            font-size: 16px;
+        }
+        .error {
+            color: red;
+        }
+        .additional-content {
             text-align: left;
             margin-top: 50px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .additional-personal {
+            text-align: left;
+            margin-top: 25px;
             padding: 20px;
             border-radius: 10px;
         }
@@ -57,11 +69,6 @@
         .copyright {
             text-align: center;
             margin-top: 20px;
-        }
-        .visitor-info {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 10px;
         }
     </style>
 </head>
@@ -97,43 +104,9 @@ Github: <a href="https://gh.con.sh/https://raw.githubusercontent.com/yuanzl77/TV
 酷安: <a href="http://www.coolapk.com/u/3519354">查看最新动态</a><br>
 2G2H: <a href="http://175.178.251.183:6689/">LR</a><br>
 Github: <a href="https://github.com/yuanzl77">仓库</a><br>
-            </code>
+          </code>
         </div>
     </div>
     <div class="copyright">© 2024 Powered by LR</div>
-    <div class="visitor-info">
-        <p>浏览量: <span id="visitor-count">0</span> | 网站延迟: <span id="latency">0</span> ms</p>
-    </div>
-
-    <script>
-        let visitorCount = 0;
-
-        // 更新访客数量的函数
-        function updateVisitorCount() {
-            visitorCount += 1;
-            document.getElementById('visitor-count').textContent = visitorCount;
-        }
-
-        // 测量网络延迟的函数
-        function measureLatency(url) {
-            const startTime = new Date().getTime();
-            fetch(url)
-                。then(response => {
-                    const endTime = new Date().getTime();
-                    const latency = endTime - startTime;
-                    document.getElementById('latency').textContent = latency;
-                })
-                。catch(error => {
-                    console.error('网络请求失败:', error);
-                    document.getElementById('latency').textContent = '请求失败';
-                });
-        }
-
-        // 页面加载时执行
-        window.onload = function() {
-            updateVisitorCount();
-            measureLatency('https://yuanzl77.github.io');
-        };
-    </script>
 </body>
 </html>
